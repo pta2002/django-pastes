@@ -1,0 +1,10 @@
+{% extends "pastes/base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>pta2002's pastes</h1>
+<ul class="pastes">
+    {% for paste in pastes %}
+    <li class="paste"><a href="{% url 'pastes:paste' paste.uuid %}"><strong>{{ paste }}</strong> ({% if paste.language %}{{ paste.language }}, {% endif %}Created at {{ paste.creation|date:"M dS, Y, h:i A" }})</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,54 @@
+body {
+    background-color: #fefefe;
+    color: #444;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.wrapper {
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+
+.highlighttable,
+.highlighttable tbody{
+    width: 100%;
+}
+
+.linenos {
+    width: 1%;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header .date {
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: -10px;
+}
+
+header a {
+    color: #aaa;
+}
+
+a {
+    color: #444;
+}
+
+.center {
+    text-align: center;
+}
+
+img,
+video {
+    max-width: 100%;
+    max-height: 100%;
+}

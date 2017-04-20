@@ -1,0 +1,24 @@
+{% extends "pastes/base.html" %}
+{% block title %}{{ file }}{% endblock %}
+{% block content %}
+<header>
+    <div class="date">{{ file.creation|date:"M dS, Y, h:i A" }}</div>
+    {% if file.title %}
+    <h2>{{ file.title }}</h2>
+    {% else %}
+    <h2>Unnamed file</h2>
+    {% endif %}
+</header>
+<div class="center">
+    {% block media %}
+        <p>No preview available for type {{ mime }}</p>
+    {% endblock %}
+    <a href="{% url 'pastes:download' file.uuid %}">Download {{ file.get_download_name }}</a>
+</div>
+{% if file.description %}
+<h3>Description</h3>
+<p class="description">
+    {{ file.description|linebreaks }}
+</p>
+{% endif %}
+{% endblock %}

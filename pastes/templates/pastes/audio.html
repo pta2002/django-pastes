@@ -1,0 +1,6 @@
+{% extends "pastes/file.html" %}
+{% block media %}
+<div>
+<audio src="{{ file.file.url }}" controls></audio>
+</div>
+{% endblock %}

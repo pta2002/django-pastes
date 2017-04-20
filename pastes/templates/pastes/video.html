@@ -1,0 +1,8 @@
+{% extends "pastes/file.html" %}
+{% block media %}
+<div>
+    <video controls name="media">
+        <source src="{{ file.file.url }}" type="{{ mime }}">
+    </video>
+</div>
+{% endblock %}

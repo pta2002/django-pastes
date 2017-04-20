@@ -1,0 +1,19 @@
+{% extends "pastes/base.html" %}
+{% block title %}{{ paste }}{% endblock %}
+
+{% block extrastyle %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'pastes/monokai.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="date">{{ paste.creation|date:"M dS, Y, h:i A" }} - <a href="{% url 'pastes:rawpaste' paste.uuid %}">Raw</a></div>
+{% if paste.filename %}
+<h2>{{ paste.filename }}</h2>
+{% else %}
+<h2>Unnamed paste</h2>
+{% endif %}
+</header>
+{{ paste.get_html|safe }}
+{% endblock %}
