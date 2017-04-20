@@ -1,4 +1,4 @@
 include LICENSE
 include README.md
 recursive-include pastes/static *
-recursive-include pastes/templates*
+recursive-include pastes/templates *
