@@ -52,7 +52,7 @@ def api_upload(request):
     if request.method != 'POST':
         return JsonResponse({"errors":["Must use POST"]}, status=400)
 
-    if request.META.get('Authorization', requests.POST.get('token', '')) != getattr(settings, "API_TOKEN", ''):
+    if request.META.get('Authorization', request.POST.get('token', '')) != getattr(settings, "API_TOKEN", ''):
         errors.append("Invalid auth token")
 
     if 'file' not in request.FILES:
